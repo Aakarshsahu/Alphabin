@@ -16,7 +16,8 @@ const SignUp = () => {
         console.log({res})
         sessionStorage.setItem('user', true)
         setEmail('');
-        setPassword('')
+        setPassword('');
+        router.push("/sign-in");
 
     } catch(e){
         console.error(e)
@@ -60,8 +61,9 @@ const SignUp = () => {
         <button 
           onClick={handleSignIn}
           className="w-full p-3  rounded text-white  flex justify-end items-center text-green-500"
+          style={{ color: '#34D399' }}
         >
-          Sign in
+          Login
         </button>
       </div>
     </div>
