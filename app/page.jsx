@@ -123,7 +123,7 @@ export default function Home() {
         {/* Pagination using react-paginate */}
         <ReactPaginate
           className='flex mt-4' // Add margin from the top
-          previousLabel={'previous'}
+          previousLabel={'prev'}
           nextLabel={'next'}
           breakLabel={'...'}
           pageCount={totalPages}
@@ -132,7 +132,7 @@ export default function Home() {
           onPageChange={handlePageClick}
           containerClassName={'pagination'}
           activeClassName={'active'}
-          pageClassName={'mx-2 p-2 bg-gray-300 text-gray-700 rounded'} // Style for individual page numbers
+          pageClassName={'mx-2 p-2 bg-gray-300 text-gray-700 rounded !important'} // Style for individual page numbers
           breakClassName={'mx-2 p-2 bg-gray-300 text-gray-700 rounded'} // Style for break dots
           previousClassName={'mx-2 p-2 bg-gray-300 text-gray-700 rounded'} // Style for previous button
           nextClassName={'mx-2 p-2 bg-gray-300 text-gray-700 rounded'} // Style for next button
