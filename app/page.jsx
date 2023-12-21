@@ -13,13 +13,7 @@ import { signOut } from 'firebase/auth';
 export default function Home() {
   const [user] = useAuthState(auth);
   const router = useRouter();
-  const userSession = typeof window !== 'undefined' ? sessionStorage.getItem('user') : null;
-  
-  
-
-  console.log({ user })
-
-  if (!user && !userSession) {
+  if (!user) {
     router.push('/sign-up')
   }
 
@@ -72,7 +66,7 @@ export default function Home() {
       <button
         onClick={() => {
           signOut(auth);
-          sessionStorage.removeItem('user');
+          // sessionStorage.removeItem('user');
         }}
         className="ml-auto p-2 bg-red-500 text-white rounded flex justify-end items-center mr-4"
       >
