@@ -6,16 +6,30 @@ import ReactPaginate from 'react-paginate';
 
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '@/app/firebase/config'
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
+
 import { signOut } from 'firebase/auth';
+
+let useRouter;
+if (typeof window !== 'undefined') {
+  useRouter = require('next/navigation').useRouter;
+}
 
 
 export default function Home() {
   const [user] = useAuthState(auth);
-  const router = useRouter();
-  if (!user) {
-    router.push('/sign-up')
-  }
+  // const router = useRouter();
+  const router = useRouter && useRouter();
+  // if (!user) {
+  //   router.push('/sign-up')
+  // }
+
+  useEffect(() => {
+    // Redirect if no user and router is available
+    if (!user && router) {
+      router.push('/sign-up');
+    }
+  }, [user, router]);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [gifs, setGifs] = useState([]);

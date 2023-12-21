@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth'
+import {createUserWithEmailAndPassword,useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth'
 import {auth} from '@/app/firebase/config'
 import { useRouter } from 'next/navigation';
 
@@ -14,7 +14,7 @@ const SignUp = () => {
     try {
         const res = await createUserWithEmailAndPassword(email, password)
         console.log({res})
-        
+
         setEmail('');
         setPassword('');
         router.push("/sign-in");
