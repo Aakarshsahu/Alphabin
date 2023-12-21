@@ -136,8 +136,8 @@ export default function Home() {
           // breakClassName={'mx-2 p-2 bg-gray-300 text-gray-700 rounded'} // Style for break dots
           pageClassName={'hidden'} // Hide individual page numbers
           breakClassName={'hidden'} // Hide break dots
-          previousClassName={'mx-2 p-2 bg-gray-300 text-gray-700 rounded !important'} // Style for previous button
-          nextClassName={'mx-2 p-2 bg-gray-300 text-gray-700 rounded !important'} // Style for next button
+          previousClassName={'mx-2 p-2 bg-gray-300 text-gray-700 rounded '} // Style for previous button
+          nextClassName={'mx-2 p-2 bg-gray-300 text-gray-700 rounded '} // Style for next button
         />
 
 
