@@ -9,13 +9,13 @@ import { auth } from '@/app/firebase/config'
 import { useRouter } from 'next/navigation';
 import { signOut } from 'firebase/auth';
 
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
 
 export default function Home() {
   const [user] = useAuthState(auth);
   const router = useRouter();
-  const userSession = sessionStorage.getItem('user');
+  const userSession = typeof window !== 'undefined' ? sessionStorage.getItem('user') : null;
+  
+  
 
   console.log({ user })
 
